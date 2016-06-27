@@ -7,16 +7,37 @@
 //
 
 #import "ViewController.h"
+#import "MyCustomViewBaseTextField.h"
 
 @interface ViewController ()
-
+{
+    __weak IBOutlet UIScrollView *myScrollView;
+    __weak IBOutlet MyCustomViewBaseTextField *myCustomTextField;
+    
+}
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [self setBaseUI];
+    [self setData];
+    
+}
+
+#pragma mark - SET UI
+-(void)setBaseUI {
+    
+    [myCustomTextField setImageName:@"img_password" andPlaceHolder:@"密碼"];
+}
+
+#pragma mark - SET Data
+-(void)setData {
+    
+    self.baseScrollView = myScrollView;
+    myCustomTextField.textField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDW-B4-Lwj">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPU-oh-Xar">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5I-Kj-TAc" customClass="MyCustomViewBaseTextField">
+                                                <rect key="frame" x="30" y="502" width="540" height="48"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="CXK-Lw-Pwf"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.29812398130000001" blue="0.27687815640000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="q5I-Kj-TAc" secondAttribute="trailing" constant="30" id="1vo-OI-vS4"/>
+                                            <constraint firstItem="q5I-Kj-TAc" firstAttribute="leading" secondItem="DPU-oh-Xar" secondAttribute="leading" constant="30" id="Qqh-Qz-Cgx"/>
+                                            <constraint firstAttribute="bottom" secondItem="q5I-Kj-TAc" secondAttribute="bottom" constant="30" id="saI-VJ-ee9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DPU-oh-Xar" firstAttribute="leading" secondItem="JDW-B4-Lwj" secondAttribute="leading" id="0eD-ui-wVD"/>
+                                    <constraint firstItem="DPU-oh-Xar" firstAttribute="top" secondItem="JDW-B4-Lwj" secondAttribute="top" id="1c6-We-lE7"/>
+                                    <constraint firstAttribute="bottom" secondItem="DPU-oh-Xar" secondAttribute="bottom" id="DSO-Qj-TXa"/>
+                                    <constraint firstItem="DPU-oh-Xar" firstAttribute="centerY" secondItem="JDW-B4-Lwj" secondAttribute="centerY" id="Gxl-hi-eo6"/>
+                                    <constraint firstItem="DPU-oh-Xar" firstAttribute="centerX" secondItem="JDW-B4-Lwj" secondAttribute="centerX" id="Vll-ru-HqV"/>
+                                    <constraint firstAttribute="trailing" secondItem="DPU-oh-Xar" secondAttribute="trailing" id="jS8-vt-XAH"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JDW-B4-Lwj" secondAttribute="trailing" id="5Wc-Gh-Rz0"/>
+                            <constraint firstItem="JDW-B4-Lwj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6Ro-hJ-et3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JDW-B4-Lwj" secondAttribute="bottom" id="k7m-6N-oOB"/>
+                            <constraint firstItem="JDW-B4-Lwj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uiN-OF-KqS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myCustomTextField" destination="q5I-Kj-TAc" id="GVj-44-BRI"/>
+                        <outlet property="myScrollView" destination="JDW-B4-Lwj" id="QAJ-kw-f1v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
