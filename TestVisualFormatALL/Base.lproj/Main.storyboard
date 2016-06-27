@@ -58,6 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myContentView" destination="DPU-oh-Xar" id="tOc-QQ-TrS"/>
                         <outlet property="myCustomTextField" destination="q5I-Kj-TAc" id="GVj-44-BRI"/>
                         <outlet property="myScrollView" destination="JDW-B4-Lwj" id="QAJ-kw-f1v"/>
                     </connections>
